@@ -1,0 +1,14 @@
+services:
+  jarvis:
+    image: ghcr.io/666ghj/jarvis:latest
+    # Accelerated mirror (if pulling is slow, you can switch to this)
+    # image: ghcr.nju.edu.cn/666ghj/jarvis:latest
+    container_name: jarvis
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+      - "5001:5001"
+    restart: unless-stopped
+    volumes:
+      - ./backend/uploads:/app/backend/uploads

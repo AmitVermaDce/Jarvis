@@ -1,0 +1,35 @@
+# ===========================================
+# Jarvis Backend Dependencies
+# ===========================================
+# Python 3.11+ required
+# Install: pip install -r requirements.txt
+# ===========================================
+
+# ============= core framework =============
+flask>=3.0.0
+flask-cors>=6.0.0
+
+# ============= LLM related =============
+# OpenAI SDK (unified LLM calls in OpenAI format)
+openai>=1.0.0
+
+# ============= Zep Cloud =============
+zep-cloud==3.13.0
+
+# ============= OASIS Social Media Simulation =============
+# OASIS social simulation framework
+camel-oasis==0.2.5
+camel-ai==0.2.78
+
+# ============= file processing =============
+PyMuPDF>=1.24.0
+# Encoding detection (support non-UTF-8 text files)
+charset-normalizer>=3.0.0
+chardet>=5.0.0
+
+# ============= utility library =============
+# environment variable loading
+python-dotenv>=1.0.0
+
+# data validation
+pydantic>=2.0.0

@@ -1,0 +1,18 @@
+{
+  "name": "Consumer Goods Demand Sensing",
+  "name_zh": "消费品需求感知",
+  "description": "Predict real-time shifts in consumer goods demand by simulating how retailers, CPG brands, supply chain managers, consumers, and analysts react to market signals including inflation, social trends, weather events, and seasonal patterns",
+  "description_zh": "通过模拟零售商、消费品品牌、供应链管理者、消费者和分析师对市场信号的反应，预测消费品需求的实时变化",
+  "icon": "🛒",
+  "category": "consumer-goods",
+  "tags": ["fmcg", "cpg", "retail", "demand-sensing", "supply-chain", "consumer-trends"],
+  "seed_files": [
+    "seed_consumer_goods_market_fundamentals.md",
+    "seed_consumer_goods_market_intelligence_april2026.md",
+    "seed_consumer_goods_behavioral_patterns.md"
+  ],
+  "simulation_requirement": "Simulate real-time consumer goods demand sensing for April-May 2026 across the US and global FMCG/CPG market. Model the interactions between major CPG brand executives (Procter & Gamble, Unilever, Nestlé, PepsiCo, Coca-Cola), retail chain buyers (Walmart, Costco, Target, Amazon Fresh, Kroger), supply chain and logistics managers, consumer sentiment influencers (TikTok creators, health/wellness bloggers), market research analysts (Nielsen, IRI/Circana, Kantar), raw material commodity traders, FDA/regulatory officials, and everyday consumers across income segments.\n\nFocus on how each participant reacts to and propagates the following current demand signals: (1) Sustained grocery inflation at 4.2% YoY driving private-label switching, (2) GLP-1 weight-loss drug adoption reshaping snack and beverage demand, (3) Summer 2026 heatwave forecasts boosting beverages and ice cream, (4) TikTok viral trend '#ProteinEverything' driving high-protein product demand, (5) Tariff increases on Chinese-manufactured packaging raising CPG costs, (6) Walmart announcing aggressive private-label expansion into premium organic.\n\nTrack how information flows between participants, how demand sentiment evolves across categories (snacks, beverages, personal care, household cleaning, packaged foods), and predict the net demand trajectory for the next 4-8 weeks. Pay special attention to demand sensing signals: early POS velocity changes, retailer order pattern shifts, social media trend acceleration, weather-driven demand spikes, and substitution effects from price sensitivity.",
+  "simulation_requirement_zh": "模拟2026年4-5月美国及全球快消品市场的实时需求感知。",
+  "recommended_rounds": 35,
+  "difficulty": "intermediate"
+}

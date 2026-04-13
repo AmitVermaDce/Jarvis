@@ -1,0 +1,18 @@
+{
+ "name": "Gold Price Demand Sensing",
+ "name_zh": "needrequestknow",
+ "description": "Predict real-time gold price movements by simulating how central banks, investment analysts, traders, ETF managers, and retail investors react to market signals",
+ "description_zh": "viasimulationlines, analyze, , ETFandscatteredforsignal should, predictreal-time",
+ "icon": "🪙",
+ "category": "finance",
+ "tags": ["gold", "commodities", "demand-sensing", "price-prediction", "financial-markets"],
+ "seed_files": [
+ "seed_gold_market_fundamentals.md",
+ "seed_gold_market_intelligence_april2026.md",
+ "seed_gold_behavioral_patterns.md"
+ ],
+ "simulation_requirement": "Simulate real-time gold market demand sensing and price prediction for April 2026. Model the interactions between central bank officials (Fed, PBOC, RBI), investment bank gold analysts (Goldman Sachs, JP Morgan, Citi), gold ETF managers, COMEX futures traders, gold mining company executives, retail gold investors, Indian and Chinese gold consumers, financial media reporters, and commodity regulators.\n\nFocus on how each participant reacts to and propagates the following current market signals: (1) PBOC's 17th consecutive month of gold buying, (2) US CPI coming in above expectations at 3.1%, (3) FOMC meeting minutes release, (4) approaching Indian Akshaya Tritiya festival demand, (5) gold ETF inflows at multi-year highs, (6) Iran nuclear negotiation breakdown.\n\nTrack how information flows between participants, how sentiment evolves, and predict the net demand trajectory (bullish/bearish/neutral) for gold over the next 1-4 weeks. Pay special attention to demand sensing signals: who amplifies bullish narratives, who provides contrarian views, and how retail investor FOMO develops or fades.",
+ "simulation_requirement_zh": "simulation2026year4month real-timeneedrequestknowandpredict.lines(, inpersonlines, degreebackuplines), linesanalyze(high, rootlargethrough,), ETF, COMEXperiod, high, scattered, degreeandin, bodyandlargeinstitutionbetween mutualmove.\n\npointfolloweachande.g.forfollowingcurrentsignaldoexitshouldandpropagation:(1)inpersonlinescontinue17month, (2)CPIhighatexpectedreachto3.1%, (3)FOMCwillneedrelease, (4)immediatelywilltofrom degreeAkshaya Tritiyanodedayneedrequest, (5)ETFflowentermultipleyearnewhigh, (6)core.\n\ninfoe.g.inandbetweenflowmove, e.g.change, andpredictnotfrom1-4 needrequest(see/see/in).specialfollowneedrequestknowsignal:placelargesee, providetowardviewpoint, byandscattered FOMOe.g.sendor.",
+ "recommended_rounds": 30,
+ "difficulty": "intermediate"
+}
