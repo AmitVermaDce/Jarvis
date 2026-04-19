@@ -47,6 +47,11 @@ def create_app(config_class=Config):
     SimulationRunner.register_cleanup()
     if should_log_startup:
         logger.info(" already registeredsimulationprocesscleanupfunction")
+        
+    # boot the live data pipeline worker
+    if is_reloader_process or not debug_mode:
+        from .services.live_data_pipeline import live_data_pipeline
+        live_data_pipeline.init_app(app)
     
     # requestlogcenter item
     @app.before_request
@@ -63,11 +68,18 @@ def create_app(config_class=Config):
         return response
     
     # register chart
-    from .api import graph_bp, simulation_bp, report_bp, scenarios_bp
+    from .api import graph_bp, simulation_bp, report_bp, scenarios_bp, demand_signals_bp
+    from .api.demand_sensing import create_demand_sensing_blueprint
+
     app.register_blueprint(graph_bp, url_prefix='/api/graph')
     app.register_blueprint(simulation_bp, url_prefix='/api/simulation')
     app.register_blueprint(report_bp, url_prefix='/api/report')
     app.register_blueprint(scenarios_bp, url_prefix='/api/scenarios')
+    app.register_blueprint(demand_signals_bp, url_prefix='/api/demand-signals')
+
+    # Register demand sensing blueprint
+    demand_sensing_bp = create_demand_sensing_blueprint()
+    app.register_blueprint(demand_sensing_bp)
     
     # health check
     @app.route('/health')

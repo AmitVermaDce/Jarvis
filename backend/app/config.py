@@ -49,9 +49,6 @@ class Config:
     LLM_BASE_URL = _llm_base_url
     LLM_MODEL_NAME = _llm_model
     
-    # Zep configuration
-    ZEP_API_KEY = os.environ.get('ZEP_API_KEY')
-    
     # File upload configuration
     MAX_CONTENT_LENGTH = 50 * 1024 * 1024  # 50MB
     UPLOAD_FOLDER = os.path.join(os.path.dirname(__file__), '../uploads')
@@ -60,6 +57,10 @@ class Config:
     # Text processing configuration
     DEFAULT_CHUNK_SIZE = 500  # Default chunk size
     DEFAULT_CHUNK_OVERLAP = 50  # Default overlap size
+    
+    # Live data ingestion configuring
+    LIVE_POLL_INTERVAL = int(os.environ.get('LIVE_POLL_INTERVAL', '1'))  # Hours
+    LIVE_DATA_SOURCES = os.environ.get('LIVE_DATA_SOURCES', 'all')  # 'duckduckgo', 'yfinance', or 'all'
     
     # OASIS simulation configurationuration
     OASIS_DEFAULT_MAX_ROUNDS = int(os.environ.get('OASIS_DEFAULT_MAX_ROUNDS', '10'))
@@ -79,14 +80,23 @@ class Config:
     REPORT_AGENT_MAX_TOOL_CALLS = int(os.environ.get('REPORT_AGENT_MAX_TOOL_CALLS', '5'))
     REPORT_AGENT_MAX_REFLECTION_ROUNDS = int(os.environ.get('REPORT_AGENT_MAX_REFLECTION_ROUNDS', '2'))
     REPORT_AGENT_TEMPERATURE = float(os.environ.get('REPORT_AGENT_TEMPERATURE', '0.5'))
-    
+
+    # Demand Sensing configuration
+    DEMAND_SENSING_ENABLED = os.environ.get('DEMAND_SENSING_ENABLED', 'false').lower() == 'true'
+    DEMAND_SIGNAL_SOURCES = os.environ.get('DEMAND_SIGNAL_SOURCES', '').split(',') if os.environ.get('DEMAND_SIGNAL_SOURCES') else ['pos', 'weather', 'inventory', 'promotion']
+    DEMAND_DEVIATION_THRESHOLD = float(os.environ.get('DEMAND_DEVIATION_THRESHOLD', '15.0'))  # percentage
+    DEMAND_FORECAST_DAYS = int(os.environ.get('DEMAND_FORECAST_DAYS', '14'))
+
+    # External API configurations (for demand signals)
+    ERP_API_URL = os.environ.get('ERP_API_URL', '')
+    ERP_API_KEY = os.environ.get('ERP_API_KEY', '')
+    WEATHER_API_KEY = os.environ.get('WEATHER_API_KEY', '')
+
     @classmethod
     def validate(cls):
         """Validate required configuration values."""
         errors = []
         if not cls.LLM_API_KEY:
             errors.append("LLM_API_KEY not configured")
-        if not cls.ZEP_API_KEY:
-            errors.append("ZEP_API_KEY not configured")
         return errors
 
